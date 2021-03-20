@@ -1,0 +1,98 @@
+<template>
+<div class="allTask">
+    <div v-for="article in articles" :key="article" class="task">
+        <input type="checkbox" @click="made(article)" class="checkboxTask"/>
+            <p v-bind:class="{checked: article.isMade}">{{ article.content }}</p>
+
+            <ModifArticle />
+    </div>
+    <div class="divarticle">
+        <img src="https://h5ckfun.info/wp-content/uploads/2015/07/MyAvatar.png" alt="">
+        <p>{{ month }}</p>
+            <ModifArticle />
+
+    </div>
+
+</div>
+</template>
+
+<script>
+
+import ModifArticle from './ModifArticle.vue'
+import { mapState } from 'vuex'
+
+export default {
+    
+  name: 'ArticleListe',
+  props: ['articles'],
+  
+  components: { ModifArticle },
+
+  computed: {
+     ...mapState([
+          'month'
+      ])
+  }
+}
+
+</script>
+
+<style>
+
+    .divarticle {
+        display: flex;
+        border: black 1px solid;
+        padding: 10px;
+        align-items: center;
+    }
+
+    .divarticle img {
+        width: 100px;
+        margin: 10px;
+    }
+
+    .divarticle p {
+        font-size: 14px;
+        margin: 10px;
+    }
+
+    .divarticle .supprimer {
+        padding: 0;
+        height: 40px;
+        width: 120px;
+        font-size: 20px;
+        background-color: red;
+        margin: 10px;
+    }
+
+    .divarticle .editer {
+        height: 40px;
+        width: 190px;
+    }
+
+
+
+
+    .allTask{
+        padding: 0 40px;
+    }
+    .task{
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 0;
+    }
+    .checked{
+        text-decoration: line-through;
+    }
+    .checkboxTask{
+        border-radius: 25px;
+        transform: scale(3);
+    }
+    .removeButton{
+        background-color: red;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 13px;
+        color:white;
+    }
+</style>
