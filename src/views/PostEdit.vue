@@ -32,9 +32,9 @@
                 </div>
 
                 <div class="col-md-4">
-                    <img src="https://h5ckfun.info/wp-content/uploads/2015/07/MyAvatar.png" alt="votre image">
+                    <img :src="todo.articleImage" alt="votre image">
                     <br>
-                    <input type="text" placeholder="Ajouter une image" v-model="todo.articleImage" class="inputContent" />
+                    <input type="text" placeholder="Ajouter une image (url)" v-model="todo.articleImage" class="inputContent" />
                 </div>
 
         </article>

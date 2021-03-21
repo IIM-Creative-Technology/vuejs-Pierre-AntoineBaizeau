@@ -1,5 +1,8 @@
 <template>
   <ul>
+
+      <!-- c'est principalement le meme components que articleliste sauf que celui ci contient
+      le bouton pour editer et supprimer le contenu  -->
     <div class="divarticleAdmin"
         v-for="todo in todos"
         :key="todo.id"
@@ -9,6 +12,7 @@
         <p>{{ todo.articleCorps }}</p>
     </div>
     <div>
+        <!-- le 1er bouton va afficher la page pour editer quand au 2ème il va tout simplement supprimer l'article -->
         <router-link class="editer" :to="{name: 'post-edit', params: {id: todo.id} }">Edit</router-link>
         <button class="supprimer" @click="deleteArticle(todo)">X</button>
     </div>
@@ -21,14 +25,14 @@
 
 export default {
 
-  components: { 
-  },
 
   computed: {
     todos() {
       return this.$store.getters.getTodos;
     }
   },
+
+  // cette methode va aller chercher la mutation dans le store qui permet de supprimer lors du clique
   methods: {
        deleteArticle(todo) {
     this.$store.commit('DELETE_ARTICLE', todo);

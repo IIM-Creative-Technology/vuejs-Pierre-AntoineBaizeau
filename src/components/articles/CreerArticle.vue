@@ -2,12 +2,13 @@
     <section class="articleSection">
 
         <h1>Créer une nouvelle page de blog</h1>
-
+    <!-- permet d'envoyer le formulaire au clique du bouton -->
     <form @submit.prevent="add">
 
         <article>
 
-
+<!-- le formulaire d'article dans le site est écrit de cette facon, avec des label avant les input, pour qu'il soit un minimum flex
+avec des col-md -->
                 <div class="col-md-8 flex">
                     <div class="col-md-4">
                         <div class="addArticle">
@@ -35,7 +36,8 @@
                 </div>
 
                 <div class="col-md-4">
-                    <img src="https://h5ckfun.info/wp-content/uploads/2015/07/MyAvatar.png" alt="votre image">
+                    <!-- ce code permet d'afficher directement l'image qui sera rentrer dans l'input en dessous -->
+                    <img :src="articleImage" alt="votre image">
                     <br>
                     <input type="text" placeholder="Ajouter une image" v-model="articleImage" class="inputContent" />
                 </div>
@@ -63,6 +65,7 @@ export default {
         articleTitre: "",
         articleMetaTitre: "",
         articleDesc: "",
+        // le lien deja rempli dans l'image permet d'afficher l'image standar du site
         articleImage: "https://h5ckfun.info/wp-content/uploads/2015/07/MyAvatar.png",
         articleCorps: "",
         id: 0

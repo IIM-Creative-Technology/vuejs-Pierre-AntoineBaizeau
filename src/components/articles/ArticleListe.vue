@@ -1,11 +1,12 @@
 <template>
   <ul>
-
+    <!-- permet de faire une boucle de tout les articles avec en pplus la possibilté de cliquer directement 
+    sur la div entiere avec le router-link qui permet de se rendre sur la page de l'article -->
     <router-link class="divarticle"
         v-for="todo in todos"
         :key="todo.id"
      :to="{name: 'post', params: {id: todo.id} }">
-
+<!-- le alt reprend le lien de l'image  u cas ou celle si ne s'affiche pas -->
         <img :src="todo.articleImage" :alt="todo.articleImage">
         <p>{{ todo.articleDesc }}</p>  
            
@@ -17,10 +18,7 @@
 
 
 export default {
-
-  components: { 
-  },
-
+//  il va chercher tout les articles pour les afficher dans la boucle
   computed: {
     todos() {
       return this.$store.getters.getTodos;

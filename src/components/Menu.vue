@@ -1,5 +1,5 @@
 <template>
-    
+    <!-- ce component est le menu principal du site qui se trouve sur toutes les pages -->
     <div id="nav">
         <router-link to="/admin">Gérer le Blog</router-link> |
         <router-link to="/">Blog</router-link> |

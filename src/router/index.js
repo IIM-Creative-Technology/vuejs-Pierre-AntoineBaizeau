@@ -19,7 +19,9 @@ const routes = [
     path: '/admin',
     name: 'Admin',
     component: Admin,
-   
+    children: [
+
+    ]
   },
   
   {
@@ -27,7 +29,7 @@ const routes = [
     name: 'Creer',
     component: Creer
   },
-
+// de cette facon chaque id a ca page dédié, c'est egalement le cas pour l'affichage du post
   {
     path:'/post/:id/edit',
     name:'post-edit',
