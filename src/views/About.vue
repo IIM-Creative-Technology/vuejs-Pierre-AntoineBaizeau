@@ -1,21 +1,13 @@
 <template>
   <div>
-    <h1>To-Do List</h1>
     <div>
-      <New />
-      <TodoList />
     </div>
   </div>
 </template>
 <script>
-import New from "@/components/New.vue";
-import TodoList from "@/components/TodoList.vue";
-
 export default {
   name: 'About',
   components: {
-    New,
-    TodoList,
   }
 };
 </script>

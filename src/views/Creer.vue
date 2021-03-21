@@ -1,75 +1,44 @@
 <template>
- <section class="articleSection">
-
-        <h1>Créer une nouvelle page de blog</h1>
-
-        <article>
-
-            <div class="col-md-8 flex">
-                <div class="col-md-4">
-                    <div class="addArticle">
-                        <label for="articleTitre">Titre de la page</label>
-                    </div>
-                    <div class="addArticle">
-                        <label for="articleMetaTitre">Meta Title</label>
-                    </div>
-                    <div class="addArticle">
-                        <label for="articleDesc">Meta Description</label>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="addArticle">
-                        <input name="articleTitre" type="text" placeholder="Titre de la page" v-model="articleTitre" class="inputContent"/>
-                    </div>
-                    <div class="addArticle">
-                        <input name="articleMetaTitre" type="text" placeholder="Meta Title" v-model="articleMetaTitre" class="inputContent"/>
-                    </div>
-                    <div class="addArticle">
-                        <input name="articleDesc" type="text" placeholder="Meta Description" v-model="articleDesc" class="inputContent"/>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <img src="https://h5ckfun.info/wp-content/uploads/2015/07/MyAvatar.png" alt="votre image">
-                <br>
-                <input type="text" placeholder="Ajouter une image" v-model="articleImage" class="inputContent"/>
-            </div>
-
-        </article>
-
-        <article class="corps">
-                <label for="corps">Corps du post</label>
-                <textarea name="corps" id="corps" cols="200" rows="10"></textarea>
-        </article>
-
-
-        <button class="add" @click="addArticle()">Créer la page</button>
-
-    </section>
+  <div>
+    <div>
+      <CreerArticle />
+    </div>
+  </div>
 </template>
-
 <script>
+import CreerArticle from '@/components/articles/CreerArticle.vue';
 
 export default {
-  name: 'creer',
-
+  name: 'Creer',
   components: {
-  },
-
- methods: {
-      addArticle(){
-          if(this.taskContent != ''){
-                this.$emit('newTask', this.taskContent)
-                this.taskContent = ''
-          }
-      }
+    CreerArticle,
   }
-}
+};
 </script>
+
 <style>
- .flex {
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+    .flex {
         display: flex;
         justify-content: center;
     }

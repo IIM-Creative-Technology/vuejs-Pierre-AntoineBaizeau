@@ -1,28 +1,19 @@
 <template>
   <div class="home">
-    <router-view></router-view>
-
-        <ArticleListe :tasks="Articles" @made="changeCheck" @remove="removeTask" />
-        
+    <ArticleListe />
   </div>
 </template>
 
 <script>
-
 import ArticleListe from '@/components/articles/ArticleListe.vue'
+// @ is an alias to /src
 
 export default {
+  
   name: 'Admin',
   components: {
     ArticleListe
   },
-  data () {
-    return {
-      tasks: []
-    }
-  },
-  methods: {
-     
-  },
+  
 }
 </script>

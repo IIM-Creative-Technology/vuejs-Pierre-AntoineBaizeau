@@ -3,50 +3,53 @@
 
         <h1>Créer une nouvelle page de blog</h1>
 
+    <form @submit.prevent="add">
+
         <article>
 
-            <div class="col-md-8 flex">
-                <div class="col-md-4">
-                    <div class="addArticle">
-                        <label for="articleTitre">Titre de la page</label>
+
+                <div class="col-md-8 flex">
+                    <div class="col-md-4">
+                        <div class="addArticle">
+                            <label for="articleTitre">Titre de la page</label>
+                        </div>
+                        <div class="addArticle">
+                            <label for="articleMetaTitre">Meta Title</label>
+                        </div>
+                        <div class="addArticle">
+                            <label for="articleDesc">Meta Description</label>
+                        </div>
                     </div>
-                    <div class="addArticle">
-                        <label for="articleMetaTitre">Meta Title</label>
-                    </div>
-                    <div class="addArticle">
-                        <label for="articleDesc">Meta Description</label>
+
+                    <div class="col-md-4">
+                        <div class="addArticle">
+                            <input name="articleTitre" type="text" placeholder="Titre de la page" v-model="articleTitre" />
+                        </div>
+                        <div class="addArticle">
+                            <input name="articleMetaTitre" type="text" placeholder="Meta Title" v-model="articleMetaTitre" />
+                        </div>
+                        <div class="addArticle">
+                            <input name="articleDesc" type="text" placeholder="Meta Description" v-model="articleDesc" />
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="addArticle">
-                        <input name="articleTitre" type="text" placeholder="Titre de la page" v-model="articleTitre" class="inputContent"/>
-                    </div>
-                    <div class="addArticle">
-                        <input name="articleMetaTitre" type="text" placeholder="Meta Title" v-model="articleMetaTitre" class="inputContent"/>
-                    </div>
-                    <div class="addArticle">
-                        <input name="articleDesc" type="text" placeholder="Meta Description" v-model="articleDesc" class="inputContent"/>
-                    </div>
+                    <img src="https://h5ckfun.info/wp-content/uploads/2015/07/MyAvatar.png" alt="votre image">
+                    <br>
+                    <input type="text" placeholder="Ajouter une image" v-model="articleImage" class="inputContent" />
                 </div>
-            </div>
-
-            <div class="col-md-4">
-                <img src="https://h5ckfun.info/wp-content/uploads/2015/07/MyAvatar.png" alt="votre image">
-                <br>
-                <input type="text" placeholder="Ajouter une image" v-model="articleImage" class="inputContent"/>
-            </div>
 
         </article>
 
-        <article class="corps">
-                <label for="corps">Corps du post</label>
-                <textarea name="corps" id="corps" cols="200" rows="10"></textarea>
-        </article>
+            <article class="corps">
+                    <label for="corps">Corps du post</label>
+                    <textarea name="corps" id="corps" cols="200" rows="10" v-model="articleCorps"></textarea>
+            </article>
 
 
-        <button class="add" @click="addArticle()">Créer la page</button>
-
+            <button class="add" type="submit">Créer la page</button>
+    </form>
     </section>
 </template>
 
@@ -55,10 +58,31 @@
 
 export default {
   name: 'creer-article',
- 
+    data() {
+        return {
+        articleTitre: "",
+        articleMetaTitre: "",
+        articleDesc: "",
+        articleImage: "",
+        articleCorps: "",
+        id: 0
+        };
+    },
+    methods: {
+        add: function() {
+        const { id, articleTitre, articleMetaTitre, articleDesc, articleImage, articleCorps } = this;
+        this.$store.commit("add", { id, articleTitre, articleMetaTitre, articleDesc, articleImage, articleCorps });
+        this.id++;
+        this.articleTitre = "";
+        this.articleMetaTitre = "";    
+        this.articleDesc = "";    
+        this.articleImage = "";    
+        this.articleCorps = "";    
+        }
+    }
 }
 </script>
-<style scoped>
+<style>
     .flex {
         display: flex;
         justify-content: center;

@@ -1,43 +1,34 @@
 <template>
-<div class="allTask">
-    <div v-for="article in articles" :key="article" class="task">
-        <input type="checkbox" @click="made(article)" class="checkboxTask"/>
-            <p v-bind:class="{checked: article.isMade}">{{ article.content }}</p>
-
+  <ul>
+    <div class="divarticle"
+        v-for="todo in todos"
+        :key="todo.id"
+    >
+        <img :src="todo.articleImage" :alt="altImage">
+        <p>{{ todo.articleCorps }}</p>  
             <ModifArticle />
     </div>
-    <div class="divarticle">
-        <img :src="image" :alt="altImage">
-        <p>{{ month }}</p>
-            <ModifArticle />
-
-    </div>
-
-</div>
+</ul>
 </template>
 
 <script>
 
-import ModifArticle from './ModifArticle.vue'
-import { mapState } from 'vuex'
+import ModifArticle from '@/components/articles/ModifArticle.vue'
 
 export default {
-    
-  name: 'ArticleListe',
-  props: ['articles'],
-  
-  components: { ModifArticle },
+
+  components: { 
+    ModifArticle 
+  },
 
   computed: {
-     ...mapState([
-          'month',
-          'image',
-          'altImage'
-      ])
+    todos() {
+      return this.$store.getters.getTodos;
+    }
   }
-}
-
+};
 </script>
+
 
 <style>
 
