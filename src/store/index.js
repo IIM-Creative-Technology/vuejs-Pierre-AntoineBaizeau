@@ -5,10 +5,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    month: 'lorem',
-    image: 'https://h5ckfun.info/wp-content/uploads/2015/07/MyAvatar.png',
-    altImage: 'image',
-    count: 0,
     todos: []
   
   },
@@ -25,7 +21,7 @@ export default new Vuex.Store({
    }
   },
   actions: {
-    
+  
   },
   modules: {
   },

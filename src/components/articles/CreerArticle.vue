@@ -63,7 +63,7 @@ export default {
         articleTitre: "",
         articleMetaTitre: "",
         articleDesc: "",
-        articleImage: "",
+        articleImage: "https://h5ckfun.info/wp-content/uploads/2015/07/MyAvatar.png",
         articleCorps: "",
         id: 0
         };

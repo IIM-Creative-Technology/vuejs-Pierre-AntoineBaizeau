@@ -49,7 +49,7 @@
             </article>
 
 
-            <button class="add" type="submit" >Créer la page</button>
+            <button class="add" type="submit" >Modifier la page</button>
     </form>
     </section>
 </template>
