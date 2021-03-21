@@ -17,12 +17,13 @@ const routes = [
     path: '/admin',
     name: 'Admin',
     component: Admin,
-    children: [
-      {
-        path: '/creer',
-        component: Creer
-      },
-    ]
+   
+  },
+  
+  {
+    path: '/creer',
+    name: 'Creer',
+    component: Creer
   },
 
 

@@ -5,23 +5,32 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    month: 9
+    month: 'lorem',
+    image: 'https://h5ckfun.info/wp-content/uploads/2015/07/MyAvatar.png',
+    altImage: 'image',
+    count: 0,
+    todos: []
+  
   },
   mutations: {
     updateMessage (state, message) {
       state.obj.message = message
+    },
+    add (state, item) {
+      state.todos.unshift(item);
     }
   },
   actions: {
     
-      addTodo ({ commit }, text) {
-        commit('addTodo', {
-          text,
-          done: false
-        })
-      },
-    
   },
   modules: {
+  },
+  getters: {
+    getTodos (state) {
+      return state.todos;
+    },
+    todoCount (state) {
+      return state.todos.length;
+    }
   }
 })

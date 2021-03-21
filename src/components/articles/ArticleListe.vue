@@ -7,7 +7,7 @@
             <ModifArticle />
     </div>
     <div class="divarticle">
-        <img src="https://h5ckfun.info/wp-content/uploads/2015/07/MyAvatar.png" alt="">
+        <img :src="image" :alt="altImage">
         <p>{{ month }}</p>
             <ModifArticle />
 
@@ -30,7 +30,9 @@ export default {
 
   computed: {
      ...mapState([
-          'month'
+          'month',
+          'image',
+          'altImage'
       ])
   }
 }

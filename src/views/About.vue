@@ -1,5 +1,44 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <h1>To-Do List</h1>
+    <div>
+      <New />
+      <TodoList />
+    </div>
   </div>
 </template>
+<script>
+import New from "@/components/New.vue";
+import TodoList from "@/components/TodoList.vue";
+
+export default {
+  name: 'About',
+  components: {
+    New,
+    TodoList,
+  }
+};
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
