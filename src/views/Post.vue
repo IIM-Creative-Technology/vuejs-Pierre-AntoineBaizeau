@@ -1,6 +1,11 @@
 <template>
-<div>    {{ todo.articleCorps }}
+<section class="postVue">
+<div>   
+    <img :src="todo.articleImage" :alt="todo.articleImage">
+    <h1>{{ todo.articleTitre }}</h1>
+     <p>{{ todo.articleCorps }}</p>
 </div>
+</section>
 </template>
 
 <script>
@@ -15,3 +20,19 @@ export default {
     }
 }
 </script>
+
+<style>
+
+.postVue img {
+    width: 200px;
+}
+
+.postVue div {
+    text-align: center;
+}
+
+.postVue p {
+    text-align: left;
+    margin: 100px;
+}
+</style>

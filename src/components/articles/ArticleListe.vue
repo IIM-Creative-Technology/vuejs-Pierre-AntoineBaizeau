@@ -1,15 +1,15 @@
 <template>
   <ul>
 
-    <div class="divarticle"
+    <router-link class="divarticle"
         v-for="todo in todos"
         :key="todo.id"
-    >        <router-link class="editer" :to="{name: 'post', params: {id: todo.id} }">Voir</router-link>
+     :to="{name: 'post', params: {id: todo.id} }">
 
         <img :src="todo.articleImage" :alt="todo.articleImage">
-        <p>{{ todo.articleCorps }}</p>  
+        <p>{{ todo.articleDesc }}</p>  
            
-    </div>
+    </router-link>
 </ul>
 </template>
 
@@ -37,6 +37,9 @@ export default {
         border: black 1px solid;
         padding: 10px;
         align-items: center;
+        text-decoration: none;
+        color: black;
+        margin: 20px;
     }
 
     .divarticle img {
@@ -58,34 +61,5 @@ export default {
         margin: 10px;
     }
 
-    .divarticle .editer {
-        height: 40px;
-        width: 190px;
-    }
 
-
-
-
-    .allTask{
-        padding: 0 40px;
-    }
-    .task{
-        display: flex;
-        justify-content: space-between;
-        margin: 40px 0;
-    }
-    .checked{
-        text-decoration: line-through;
-    }
-    .checkboxTask{
-        border-radius: 25px;
-        transform: scale(3);
-    }
-    .removeButton{
-        background-color: red;
-        border: none;
-        border-radius: 25px;
-        padding: 10px 13px;
-        color:white;
-    }
 </style>

@@ -1,12 +1,16 @@
 <template>
-<div>    {{ todo.articleCorps }}
+<div>   
+    <ModifArticle />
+     {{ todo.articleCorps }}
 </div>
 </template>
 
 <script>
     import { mapState} from 'vuex';
+import ModifArticle from '../components/articles/ModifArticle.vue';
 
 export default {
+  components: { ModifArticle },
     computed: {
         ...mapState(['todos']),
         todo(){

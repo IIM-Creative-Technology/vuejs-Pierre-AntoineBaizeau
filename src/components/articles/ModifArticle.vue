@@ -44,7 +44,8 @@
 
             <article class="corps">
                     <label for="corps">Corps du post</label>
-                    <textarea name="corps" id="corps" cols="200" rows="10" v-model="articleCorps" required></textarea>
+                    <textarea name="corps" id="corps" cols="200" rows="10" v-model="articleCorps" required>    
+</textarea>
             </article>
 
 
