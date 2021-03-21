@@ -23,13 +23,13 @@
 
                     <div class="col-md-4">
                         <div class="addArticle">
-                            <input name="articleTitre" type="text" placeholder="Titre de la page" v-model="articleTitre" />
+                            <input name="articleTitre" type="text" placeholder="Titre de la page" v-model="articleTitre" required />
                         </div>
                         <div class="addArticle">
-                            <input name="articleMetaTitre" type="text" placeholder="Meta Title" v-model="articleMetaTitre" />
+                            <input name="articleMetaTitre" type="text" placeholder="Meta Title" v-model="articleMetaTitre" required />
                         </div>
                         <div class="addArticle">
-                            <input name="articleDesc" type="text" placeholder="Meta Description" v-model="articleDesc" />
+                            <input name="articleDesc" type="text" placeholder="Meta Description" v-model="articleDesc" required />
                         </div>
                     </div>
                 </div>
@@ -44,11 +44,11 @@
 
             <article class="corps">
                     <label for="corps">Corps du post</label>
-                    <textarea name="corps" id="corps" cols="200" rows="10" v-model="articleCorps"></textarea>
+                    <textarea name="corps" id="corps" cols="200" rows="10" v-model="articleCorps" required></textarea>
             </article>
 
 
-            <button class="add" type="submit">Créer la page</button>
+            <button class="add" type="submit" >Créer la page</button>
     </form>
     </section>
 </template>

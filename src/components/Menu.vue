@@ -4,7 +4,6 @@
         <router-link to="/admin">Gérer le Blog</router-link> |
         <router-link to="/">Blog</router-link> |
         <router-link to="/about">About</router-link> |
-        <router-link :to="{ path: getCreerLink() }">Créer une nouvelle page</router-link> |
 
     </div>
 
@@ -12,11 +11,7 @@
 
 <script>
 export default {
-    methods: {
-      getCreerLink: function() {
-        return '/creer'
-      },
-    }
+    
 }
 </script>
 
