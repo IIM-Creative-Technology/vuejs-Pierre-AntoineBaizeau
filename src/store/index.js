@@ -18,7 +18,11 @@ export default new Vuex.Store({
     },
     add (state, item) {
       state.todos.unshift(item);
-    }
+    },
+    DELETE_ARTICLE(state, todo) {
+      var index = state.todos.findIndex(c => c.id == todo.id);
+      state.todos.splice(index, 1);
+   }
   },
   actions: {
     

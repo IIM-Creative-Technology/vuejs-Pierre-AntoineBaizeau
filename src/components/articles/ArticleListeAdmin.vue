@@ -5,8 +5,10 @@
         :key="todo.id"
     >
         <img :src="todo.articleImage" :alt="todo.articleImage">
-        <p>{{ todo.articleCorps }}</p>  
-           
+        <p>{{ todo.articleCorps }}</p> 
+        <button class="editer">Editer</button>
+        <button class="supprimer" @click="deleteArticle(todo)">X</button>
+ 
     </div>
 </ul>
 </template>
@@ -23,6 +25,11 @@ export default {
     todos() {
       return this.$store.getters.getTodos;
     }
+  },
+  methods: {
+       deleteArticle(todo) {
+    this.$store.commit('DELETE_ARTICLE', todo);
+ }
   }
 };
 </script>
