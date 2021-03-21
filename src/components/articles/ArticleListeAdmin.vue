@@ -6,7 +6,7 @@
     >
         <img :src="todo.articleImage" :alt="todo.articleImage">
         <p>{{ todo.articleCorps }}</p> 
-        <button class="editer">Editer</button>
+        <router-link class="editer" :to="{name: 'post-edit', params: {id: todo.id} }">Edit</router-link>
         <button class="supprimer" @click="deleteArticle(todo)">X</button>
  
     </div>

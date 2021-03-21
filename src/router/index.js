@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
+import Post from '@/views/Post.vue'
 import Admin from '@/views/Admin.vue'
 import Creer from '@/views/Creer.vue'
+import PostEdit from '@/views/PostEdit.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -26,7 +28,19 @@ const routes = [
     component: Creer
   },
 
+  {
+    path:'/post/:id/edit',
+    name:'post-edit',
+    component:PostEdit,
+    params:true,
+  },
 
+  {
+    path:'/post/:id',
+    name:'post',
+    component:Post,
+    params:true,
+  },
  
   {
     path: '/about',

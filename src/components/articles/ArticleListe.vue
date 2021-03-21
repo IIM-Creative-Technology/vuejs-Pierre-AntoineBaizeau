@@ -1,9 +1,11 @@
 <template>
   <ul>
+
     <div class="divarticle"
         v-for="todo in todos"
         :key="todo.id"
-    >
+    >        <router-link class="editer" :to="{name: 'post', params: {id: todo.id} }">Voir</router-link>
+
         <img :src="todo.articleImage" :alt="todo.articleImage">
         <p>{{ todo.articleCorps }}</p>  
            
